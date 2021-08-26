@@ -101,9 +101,9 @@ Also, the `User-Agent` for the requests will have the prefix `GitHub-Hookshot/`.
 
 ## branch_protection_rule
 
-TODO: fix (just copied from discussions for now)
+{% data reusables.webhooks.branch_protection_rule-webhooks-beta %}
 
-{% data reusables.webhooks.discussions-webhooks-beta %}
+TODO: fix (just copied from discussions from this point below)
 
 Activity related to a discussion. For more information, see the "[Using the GraphQL API for discussions](/graphql/guides/using-the-graphql-api-for-discussions)."
 ### Availability
@@ -511,7 +511,7 @@ Key | Type | Description
 
 {% note %}
 
-**Note:** This event replaces the deprecated `integration_installation` event.  
+**Note:** This event replaces the deprecated `integration_installation` event.
 
 {% endnote %}
 

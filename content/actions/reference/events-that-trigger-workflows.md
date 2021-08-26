@@ -62,7 +62,7 @@ Cron syntax has five fields separated by a space, and each field represents a un
 │ │ ┌───────────── day of the month (1 - 31)
 │ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
 │ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
-│ │ │ │ │                                   
+│ │ │ │ │
 │ │ │ │ │
 │ │ │ │ │
 * * * * *
@@ -89,7 +89,7 @@ Notifications for scheduled workflows are sent to the user who last modified the
 
 ## Manual events
 
-You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event. To trigger more than one workflow in a repository and create custom events and event types, use the `repository_dispatch` event. 
+You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event. To trigger more than one workflow in a repository and create custom events and event types, use the `repository_dispatch` event.
 
 ### `workflow_dispatch`
 
@@ -171,6 +171,8 @@ You can configure your workflow to run when webhook events are generated on {% d
 Not all webhook events trigger workflows. For the complete list of available webhook events and their payloads, see "[Webhook events and payloads](/developers/webhooks-and-events/webhook-events-and-payloads)."
 
 ### `branch_protection_rule`
+
+{% data reusables.webhooks.branch_protection_rule-webhooks-beta %}
 
 Runs your workflow anytime the `branch_protection_rule` event occurs. {% data reusables.developer-site.multiple_activity_types %} For information about the GraphQL API, see "[BranchProtectionRule](/graphql/reference/objects#branchprotectionrule)."
 
@@ -589,7 +591,7 @@ Runs your workflow anytime the `pull_request` event occurs. {% data reusables.de
 
 {% note %}
 
-**Notes:** 
+**Notes:**
 - By default, a workflow only runs when a `pull_request`'s activity type is `opened`, `synchronize`, or `reopened`. To trigger workflows for more activity types, use the `types` keyword.
 - Workflows will not run on `pull_request` activity if the pull request has a merge conflict. The merge conflict must be resolved first.
 
@@ -808,7 +810,7 @@ on:
   workflow_run:
     workflows: ["Run Tests"]
     branches: [main]
-    types: 
+    types:
       - completed
       - requested
 ```
